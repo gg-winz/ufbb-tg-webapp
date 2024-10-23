@@ -11,9 +11,6 @@ function displayMap() {
   const halfSize = Math.floor(mapSize / 2);
 
   for (let dy = -halfSize; dy <= halfSize; dy++) {
-    const row = document.createElement("div");
-    row.className = "map-row";
-
     for (let dx = -halfSize; dx <= halfSize; dx++) {
       const cell = document.createElement("div");
       cell.className = "map-cell";
@@ -27,10 +24,8 @@ function displayMap() {
       }
 
       cell.textContent = coordinates;
-      row.appendChild(cell);
+      mapContainer.appendChild(cell);
     }
-
-    mapContainer.appendChild(row);
   }
 }
 
