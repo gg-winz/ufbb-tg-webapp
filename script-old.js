@@ -1,5 +1,5 @@
 /* eslint-disable no-undef */
-import { locations } from "./maps/city/enernity/city_script.js";
+import { locations } from "./city-of-enernity.js";
 
 let playerPosition = { x: 49999, y: 49999 };
 
@@ -149,31 +149,17 @@ function updateControlButtons() {
   const directions = checkAvailableDirections();
   Object.entries(directions).forEach(([direction, isPossible]) => {
     const button = document.getElementById(`${direction}Button`);
-    const iconPath = isPossible
-      ? `./pages/interface/icon/c_${direction}.svg`
-      : "./pages/interface/icon/empty.svg";
-
-    // Проверка существования иконки
-    fetch(iconPath)
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error(`Icon not found: ${iconPath}`);
-        }
-        return response.blob();
-      })
-      .then(() => {
-        button.src = iconPath;
-        button.style.opacity = isPossible ? "1" : "0.5";
-        button.disabled = !isPossible;
-        button.style.pointerEvents = isPossible ? "auto" : "none";
-      })
-      .catch((error) => {
-        console.error(error.message);
-        button.src = "./pages/interface/icon/empty.svg";
-        button.style.opacity = "0.5";
-        button.disabled = true;
-        button.style.pointerEvents = "none";
-      });
+    if (isPossible) {
+      button.src = `icon/controls/cursor_${direction}.svg`;
+      button.style.opacity = "1";
+      button.disabled = false;
+      button.style.pointerEvents = "auto";
+    } else {
+      button.src = "icon/controls/empty.svg";
+      button.style.opacity = "0.5";
+      button.disabled = true;
+      button.style.pointerEvents = "none";
+    }
   });
 }
 
