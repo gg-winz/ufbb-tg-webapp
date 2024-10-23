@@ -23,7 +23,7 @@ function displayMap() {
       const coordinates = `X${x}-Y${y}`;
 
       if (x === playerPosition.x && y === playerPosition.y) {
-        cell.className += " player-position";
+        cell.classList.add("player-position");
       }
 
       cell.textContent = coordinates;
