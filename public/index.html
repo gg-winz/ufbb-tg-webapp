@@ -1,52 +1,76 @@
 <!DOCTYPE html>
 <html lang="ru">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Город Вечности</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
+    <link rel="stylesheet" href="./pages/styles/index.css" />
+  </head>
 
-<body>
+  <body>
     <div id="top-bar">
-        <div id="avatar-container">
-            <img src="icon/img/avatar.jpg" id="avatar" alt="">
-        </div>
-        <div id="setting-container">
-            <img src="icon/controls/menu.svg" id="setting-button" alt="Настройки" class="control-button">
-        </div>
+      <div id="avatar-container">
+        <img src="./pages/interface/icon/avatar.jpg id="avatar" alt="" />
+      </div>
+      <div id="setting-container">
+        <img
+          src="./pages/interface/icon/setting.svg"
+          id="setting-button"
+          alt="Настройки"
+          class="control-button"
+        />
+      </div>
     </div>
     <div id="game-interface">
-        <div id="map-container">
-            <h1>Город Вечности</h1>
-            <div id="map"></div>
-        </div>
-        <div id="bot-bar">
+      <div id="map-container">
+        <h1>Город Вечности</h1>
+        <div id="map"></div>
+      </div>
+      <div id="bot-bar">
         <div id="controls">
-            <div class="control-row">
-                <img src="icon/controls/cursor_up.svg" id="upButton" alt="" class="control-button">
-            </div>
-            <div class="control-row control-row-center">
-                <img src="icon/controls/cursor_left.svg" id="leftButton" alt=""
-                    class="control-button control-button-side">
-                <img src="icon/controls/empty.svg" id="emptyButton" alt="" class="control-button control-button-empty">
-                <img src="icon/controls/cursor_right.svg" id="rightButton" alt=""
-                    class="control-button control-button-side">
-            </div>
-            <div class="control-row">
-                <img src="icon/controls/cursor_down.svg" id="downButton" alt="" class="control-button">
-            </div>
+          <div class="control-row">
+            <img
+              src="./pages/interface/icon/c_up.svg"
+              id="upButton"
+              alt=""
+              class="control-button"
+            />
+          </div>
+          <div class="control-row control-row-center">
+            <img
+              src="./pages/interface/icon/c_left.svg"
+              id="leftButton"
+              alt=""
+              class="control-button control-button-side"
+            />
+            <img
+              src="./pages/interface/icon/empty.svg"
+              id="emptyButton"
+              alt=""
+              class="control-button control-button-empty"
+            />
+            <img
+              src="./pages/interface/icon/c_right.svg"
+              id="rightButton"
+              alt=""
+              class="control-button control-button-side"
+            />
+          </div>
+          <div class="control-row">
+            <img
+              src="./pages/interface/icon/c_down.svg"
+              id="downButton"
+              alt=""
+              class="control-button"
+            />
+          </div>
         </div>
         <div id="info-panel"></div>
+      </div>
     </div>
-    </div>
 
-    <script src="specialCells.js"></script>
-    <script type="module" src="globalMap.js"></script>
-    <script type="module" src="city-of-enernity.js"></script>
-    <script type="module" src="script.js"></script>
-
-</body>
-
+    <script type="module" src="./pages/maps/city/gMap.js"></script>
+    <script type="module" src="./pages/maps/city/enernity/enernity.js"></script>
+    <script type="module" src="./pages/script.js"></script>
+  </body>
 </html>

@@ -1,0 +1,262 @@
+html,
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  overscroll-behavior-y: none;
+  touch-action: none;
+}
+
+#game-interface {
+  background-color: #8c8b8b;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  border-radius: 50px 50px 0px 0px;
+  top: 80px;
+  position: fixed;
+}
+
+#top-bar {
+  position: relative;
+  z-index: 1;
+  height: 8.47%;
+}
+
+#avatar-container {
+  position: relative;
+  width: 140px;
+  height: 65px;
+  top: 9%;
+  left: 3%;
+}
+
+#avatar {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  position: absolute;
+  top: 50%;
+  transform: translate(5%, -50%);
+}
+
+#map-container {
+  z-index: 4;
+  max-width: 30vmin;
+  margin-left: auto;
+  margin-right: auto;
+  position: fixed;
+  top: 1.5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50%;
+}
+
+h1 {
+  position: relative;
+  font-size: 0.8rem;
+  max-height: 0vmin;
+  top: -6px;
+  text-align: center;
+}
+
+#map {
+  background-color: #3e3e3e;
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+  grid-template-rows: repeat(9, 1fr);
+  gap: 1px;
+  aspect-ratio: 1 / 1;
+  max-height: 30vmin;
+  border-radius: 5vmin;
+  overflow: hidden;
+  border: 1.3px solid #000;
+}
+
+#setting-container {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+#setting-button {
+  width: 45px;
+  height: 45px;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+#setting-button:hover {
+  opacity: 0.8;
+}
+
+.cell {
+  aspect-ratio: 1 / 1;
+  border: 1px solid #999;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  position: relative;
+  overflow: hidden;
+  padding: 1px;
+  font-size: 0.65vmin;
+  line-height: 1;
+  text-align: center;
+}
+
+.cell.bu {
+  background-color: #808080;
+}
+
+.cell svg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  height: 80%;
+}
+
+.cell-icon {
+  width: 70%;
+  height: 70%;
+  object-fit: contain;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.player {
+  position: absolute;
+  width: 30%;
+  height: 30%;
+  background-color: red;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
+#bot-bar {
+  background-color: #f11a02;
+  width: 100vmin;
+  height: 20vmax;
+  display: flex;
+  position: fixed;
+  bottom: 0px;
+  left: 0;
+  right: 0;
+  flex-direction: column;
+  align-items: center;
+  z-index: 99;
+}
+
+#left-container {
+  /*background-color: #f1020230; */
+  border-radius: 0px 0% 0px 0px;
+  width: 100%;
+  height: 26.7vmin;
+  display: flex;
+  position: fixed;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  padding: 0.5vmin 0;
+}
+
+#controls {
+  width: 100vmin;
+  height: 30%;
+  display: flex;
+  position: fixed;
+  bottom: 0px;
+  left: 0;
+  right: 0;
+  flex-direction: column;
+  align-items: center;
+  z-index: 99;
+}
+
+#upButton,
+#downButton {
+  width: 60px;
+  height: 60px;
+  margin: -4px;
+}
+
+#leftButton,
+#rightButton {
+  width: 60px;
+  height: 60px;
+  margin: 18px;
+}
+
+.control-row {
+  display: flex;
+  justify-content: center;
+  margin: 0.2vmin 0;
+}
+
+.control-button {
+  width: 55px;
+  height: 55px;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+  margin: 5px;
+}
+
+.control-button:hover {
+  opacity: 0.8;
+}
+
+.control-button-action {
+  width: 30px;
+  height: 30px;
+  margin: 0 5px;
+  visibility: hidden;
+}
+
+#info-panel {
+  position: fixed;
+  bottom: 0px;
+  left: 0;
+  right: 0;
+  margin-top: 0.5vmin;
+  background-color: #e0e0e0;
+  padding: 0.5vmin;
+  border-radius: 0.5vmin;
+  font-size: 2.1vmin;
+  min-height: 2.2vmin;
+  width: 99%;
+  max-width: 99%;
+  text-align: center;
+  z-index: 98;
+}
+
+.coordinates {
+  font-size: 0.6vmin;
+  display: none;
+}
+
+.value {
+  font-size: 0.8vmin;
+  font-weight: bold;
+}
+
+.value.hidden {
+  display: none;
+}
