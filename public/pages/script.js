@@ -1,4 +1,3 @@
-/* eslint-disable no-undef */
 import { locations } from "./maps/city/enernity/enernity.js";
 
 let playerPosition = { x: 49999, y: 49999 };
@@ -12,9 +11,6 @@ function displayMap() {
 
   for (let dy = -halfSize; dy <= halfSize; dy++) {
     for (let dx = -halfSize; dx <= halfSize; dx++) {
-      const cell = document.createElement("div");
-      cell.className = "map-cell";
-
       const x = playerPosition.x + dx;
       const y = playerPosition.y + dy;
       const coordinates = `X${x}-Y${y}`;
