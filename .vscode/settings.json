@@ -19,6 +19,7 @@
     "Звёздный",
     "игрока",
     "игры",
+    "иконки",
     "Инициализация",
     "Информация",
     "использования",
@@ -36,6 +37,7 @@
     "позиция",
     "Покаяния",
     "Пример",
+    "Проверка",
     "Святых",
     "Северная",
     "Северные",
@@ -47,6 +49,7 @@
     "событий",
     "стена",
     "стены",
+    "существования",
     "угол",
     "управления",
     "храм",
@@ -85,7 +88,12 @@
     "**/.svn": true,
     "**/.hg": true,
     "**/CVS": true,
-    "**/.DS_Store": true
+    "**/.DS_Store": true,
+    ".vscode/": true,
+    "README.md": true,
+    "package.json": true,
+    "package-lock.json": true,
+    ".gitignore": true
   },
-  "hidefiles.selectedProfile": "Show All Files"
+  "hidefiles.selectedProfile": "Default"
 }

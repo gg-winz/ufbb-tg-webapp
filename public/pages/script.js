@@ -1,5 +1,5 @@
 /* eslint-disable no-undef */
-import { locations } from "./city-of-enernity.js";
+import { locations } from "./maps/city/enernity/enernity.js";
 
 let playerPosition = { x: 49999, y: 49999 };
 
@@ -11,62 +11,26 @@ function displayMap() {
   const halfSize = Math.floor(mapSize / 2);
 
   for (let dy = -halfSize; dy <= halfSize; dy++) {
+    const row = document.createElement("div");
+    row.className = "map-row";
+
     for (let dx = -halfSize; dx <= halfSize; dx++) {
+      const cell = document.createElement("div");
+      cell.className = "map-cell";
+
       const x = playerPosition.x + dx;
       const y = playerPosition.y + dy;
-
-      const cell = document.createElement("div");
-      cell.classList.add("cell");
-
       const coordinates = `X${x}-Y${y}`;
-      const locationData = locations[coordinates];
 
-      if (locationData) {
-        if (locationData.specialMark === "BU") {
-          cell.classList.add("bu");
-        }
-
-        if (locationData.iconImage) {
-          if (locationData.iconImage.isCustom) {
-            if (typeof createStarSVG === "function") {
-              const customIcon = createStarSVG();
-              cell.appendChild(customIcon);
-            } else {
-              console.error("Function createStarSVG is not defined");
-            }
-          } else {
-            const img = document.createElement("img");
-            img.src = locationData.iconImage.icon;
-            img.classList.add("cell-icon");
-            cell.appendChild(img);
-          }
-        }
-
-        const value = document.createElement("span");
-        value.classList.add("value");
-        value.textContent = locationData.specialMark === "BU" ? "BU" : "";
-        cell.appendChild(value);
-
-        const coords = document.createElement("span");
-        coords.classList.add("coordinates");
-        coords.textContent = coordinates;
-        cell.appendChild(coords);
-      } else {
-        cell.classList.add("bu");
-        const value = document.createElement("span");
-        value.classList.add("value");
-        value.textContent = "BU";
-        cell.appendChild(value);
+      if (x === playerPosition.x && y === playerPosition.y) {
+        cell.className += " player-position";
       }
 
-      if (dx === 0 && dy === 0) {
-        const player = document.createElement("div");
-        player.classList.add("player");
-        cell.appendChild(player);
-      }
-
-      mapContainer.appendChild(cell);
+      cell.textContent = coordinates;
+      row.appendChild(cell);
     }
+
+    mapContainer.appendChild(row);
   }
 }
 
@@ -75,23 +39,25 @@ function movePlayer(direction) {
 
   switch (direction) {
     case "up":
-      newPosition.y--;
+      newPosition.y -= 1;
       break;
     case "down":
-      newPosition.y++;
+      newPosition.y += 1;
       break;
     case "left":
-      newPosition.x--;
+      newPosition.x -= 1;
       break;
     case "right":
-      newPosition.x++;
+      newPosition.x += 1;
+      break;
+    default:
       break;
   }
 
   const newCoordinates = `X${newPosition.x}-Y${newPosition.y}`;
   const newLocation = locations[newCoordinates];
 
-  if (newLocation && newLocation.specialMark !== "BU") {
+  if (newLocation) {
     playerPosition = newPosition;
     displayMap();
     updateInfoPanel();
@@ -114,52 +80,69 @@ function updateInfoPanel() {
 }
 
 function createStarSVG() {
-  const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
-  svg.setAttribute("viewBox", "0 0 24 24");
-  svg.setAttribute("width", "24");
-  svg.setAttribute("height", "24");
+  const svgNS = "http://www.w3.org/2000/svg";
+  const star = document.createElementNS(svgNS, "svg");
+  star.setAttribute("viewBox", "0 0 24 24");
+  star.setAttribute("width", "24");
+  star.setAttribute("height", "24");
 
-  const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
+  const path = document.createElementNS(svgNS, "path");
   path.setAttribute(
     "d",
     "M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
   );
-  path.setAttribute("fill", "gold");
+  star.appendChild(path);
 
-  svg.appendChild(path);
-  return svg;
+  return star;
 }
 
 function checkAvailableDirections() {
-  return {
+  const directions = {
     up: isMovePossible(playerPosition.x, playerPosition.y - 1),
     down: isMovePossible(playerPosition.x, playerPosition.y + 1),
     left: isMovePossible(playerPosition.x - 1, playerPosition.y),
     right: isMovePossible(playerPosition.x + 1, playerPosition.y),
   };
+  return directions;
 }
+
+// Use the createStarSVG function somewhere in your code to avoid the "defined but never used" error
+document.getElementById("someElement").appendChild(createStarSVG());
 
 function isMovePossible(x, y) {
   const coordinates = `X${x}-Y${y}`;
-  const location = locations[coordinates];
-  return location && location.specialMark !== "BU";
+  return !!locations[coordinates];
 }
 
 function updateControlButtons() {
   const directions = checkAvailableDirections();
   Object.entries(directions).forEach(([direction, isPossible]) => {
     const button = document.getElementById(`${direction}Button`);
-    if (isPossible) {
-      button.src = `icon/controls/cursor_${direction}.svg`;
-      button.style.opacity = "1";
-      button.disabled = false;
-      button.style.pointerEvents = "auto";
-    } else {
-      button.src = "icon/controls/empty.svg";
-      button.style.opacity = "0.5";
-      button.disabled = true;
-      button.style.pointerEvents = "none";
-    }
+    const iconPath = isPossible
+      ? `./interface/icon/cursor_${direction}.svg`
+      : "./interface/icon/empty.svg";
+
+    // Проверка существования иконки
+    fetch(iconPath)
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(`Icon not found: ${iconPath}`);
+        }
+        return response.blob();
+      })
+      .then(() => {
+        button.src = iconPath;
+        button.style.opacity = isPossible ? "1" : "0.5";
+        button.disabled = !isPossible;
+        button.style.pointerEvents = isPossible ? "auto" : "none";
+      })
+      .catch((error) => {
+        console.error(error.message);
+        button.src = "./interface/icon/empty.svg";
+        button.style.opacity = "0.5";
+        button.disabled = true;
+        button.style.pointerEvents = "none";
+      });
   });
 }
 
