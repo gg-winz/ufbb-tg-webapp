@@ -5,8 +5,8 @@ import { locations, createSVG } from "./cEternity.js";
 const Cell = ({ coordinates, locationData, isPlayer }) => {
   return (
     <div className={`cell ${locationData?.specialTeg === "BU" ? "bu" : ""}`}>
-      {locationData?.iconImage && (
-        <div className="cell-icon">{createSVG(locationData.iconImage)}</div>
+      {locationData?.specialTeg && (
+        <div className="cell-icon">{createSVG(locationData.specialTeg)}</div>
       )}
       {isPlayer && <div className="player"></div>}
       <span className="coordinates">{coordinates}</span>
