@@ -1,5 +1,5 @@
 /* eslint-disable no-undef */
-import { locations } from "./maps/city/enernity/city_script.js";
+import { locations } from "../icon/city/enernity/icon/city_script.js";
 
 let playerPosition = { x: 49999, y: 49999 };
 

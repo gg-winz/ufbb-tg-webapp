@@ -1,5 +1,3 @@
-// city-of-enernity.js
-
 const locTitle = "Город Вечности";
 const nw = "Северная стена";
 const sw = "Южная стена";
@@ -52,7 +50,7 @@ const locations = {
     description: "Северные Врата",
     specialMark: "GATE",
     gateDirection: "north",
-    iconImage: { icon: "./icon/north-gate.svg" },
+    iconImage: { icon: "./north-gate.svg" },
     backgroundImage: "",
   },
 
@@ -204,7 +202,7 @@ const locations = {
     title: locTitle,
     description: "",
     specialMark: "assassin",
-    iconImage: { icon: "./icon/assassin-guild.svg" },
+    iconImage: { icon: "./assassin-guild.svg" },
     backgroundImage: "",
   },
 
@@ -220,7 +218,7 @@ const locations = {
     title: locTitle,
     description: "",
     specialMark: "herbalist",
-    iconImage: { icon: "./icon/herbalist.svg" },
+    iconImage: { icon: "./herbalist.svg" },
     backgroundImage: "",
   },
 
@@ -252,7 +250,7 @@ const locations = {
     title: locTitle,
     description: "",
     specialMark: "berserker",
-    iconImage: { icon: "./icon/berserker-guild.svg" },
+    iconImage: { icon: "./berserker-guild.svg" },
     backgroundImage: "",
   },
 
@@ -412,7 +410,7 @@ const locations = {
     title: locTitle,
     description: "",
     specialMark: "shop",
-    iconImage: { icon: "./icon/shop.svg" },
+    iconImage: { icon: "./shop.svg" },
     backgroundImage: "",
   },
 
@@ -453,7 +451,7 @@ const locations = {
     description: "Западные Врата",
     specialMark: "GATE",
     gateDirection: "west",
-    iconImage: { icon: "./icon/west-gate.svg" },
+    iconImage: { icon: "./west-gate.svg" },
     backgroundImage: "",
   },
 
@@ -534,7 +532,7 @@ const locations = {
     description: "Восточные Врата",
     specialMark: "GATE",
     gateDirection: "east",
-    iconImage: { icon: "./icon/east-gate.svg" },
+    iconImage: { icon: "./east-gate.svg" },
     backgroundImage: "",
   },
 
@@ -558,7 +556,7 @@ const locations = {
     title: locTitle,
     description: "",
     specialMark: "forge",
-    iconImage: { icon: "./icon/forge.svg" },
+    iconImage: { icon: "./forge.svg" },
     backgroundImage: "",
   },
 
@@ -734,7 +732,7 @@ const locations = {
     title: locTitle,
     description: "",
     specialMark: "barbarian",
-    iconImage: { icon: "./icon/barbarian-guild.svg" },
+    iconImage: { icon: "./barbarian-guild.svg" },
     backgroundImage: "",
   },
 
@@ -935,7 +933,7 @@ const locations = {
     description: "Южные Врата",
     specialMark: "GATE",
     gateDirection: "south",
-    iconImage: { icon: "./icon/south-gate.svg" },
+    iconImage: { icon: "./south-gate.svg" },
     backgroundImage: "",
   },
 

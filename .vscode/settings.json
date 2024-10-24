@@ -2,6 +2,7 @@
   "cSpell.words": [
     "Бульвар",
     "Вечности",
+    "Вечный",
     "воротам",
     "Восточная",
     "Восточные",
@@ -78,7 +79,9 @@
           "README.md",
           "package.json",
           "package-lock.json",
-          ".gitignore"
+          ".gitignore",
+          "bot/",
+          "node_modules/"
         ]
       }
     ]
@@ -88,12 +91,7 @@
     "**/.svn": true,
     "**/.hg": true,
     "**/CVS": true,
-    "**/.DS_Store": true,
-    ".vscode/": true,
-    "README.md": true,
-    "package.json": true,
-    "package-lock.json": true,
-    ".gitignore": true
+    "**/.DS_Store": true
   },
-  "hidefiles.selectedProfile": "Default"
+  "hidefiles.selectedProfile": "Show All Files"
 }
