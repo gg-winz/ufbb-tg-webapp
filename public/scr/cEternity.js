@@ -1,6 +1,7 @@
 import svgIcons from "../icon/maps/c/enernity/enernity_svgPack.json";
 
 function createSVG(iconName) {
+  console.log(`Creating SVG for icon: ${iconName}`);
   const svgString = svgIcons[iconName];
   if (!svgString) {
     console.error(`Icon "${iconName}" not found in svgIcons`);
@@ -863,5 +864,5 @@ const locations = {
     backgroundImage: "",
   },
 };
-
+console.log("Locations loaded:", locations);
 export { locations, createSVG };

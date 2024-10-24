@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import ReactDOM from "react-dom";
 import { locations, createSVG } from "./cEternity.js";
 
 const Cell = ({ coordinates, locationData, isPlayer }) => {
+  console.log(`Rendering Cell: ${coordinates}`, locationData, isPlayer);
   return (
     <div className={`cell ${locationData?.specialTeg === "BU" ? "bu" : ""}`}>
       {locationData?.specialTeg && (
@@ -16,6 +17,10 @@ const Cell = ({ coordinates, locationData, isPlayer }) => {
 
 const Map = () => {
   const [playerPosition, setPlayerPosition] = useState({ x: 49999, y: 49999 });
+
+  useEffect(() => {
+    console.log("Player position:", playerPosition);
+  }, [playerPosition]);
 
   const displayMap = () => {
     const mapSize = 9;
@@ -82,6 +87,7 @@ const Map = () => {
 };
 
 const Controls = ({ movePlayer }) => {
+  console.log("Rendering Controls");
   return (
     <div id="controls">
       <div className="control-row">
@@ -129,6 +135,7 @@ const Controls = ({ movePlayer }) => {
 };
 
 const App = () => {
+  console.log("Rendering App");
   return (
     <div>
       <h1>Вечный город</h1>
@@ -138,3 +145,4 @@ const App = () => {
 };
 
 ReactDOM.render(<App />, document.getElementById("root"));
+console.log("ReactDOM.render called");

@@ -103,7 +103,8 @@
     "Южный",
     "южным",
     "ячеек",
-    "enernity"
+    "enernity",
+    "Parens"
   ],
   "hidefiles.configurationType": "local",
   "hidefiles.globalConfig": {
@@ -136,5 +137,6 @@
     "**/CVS": true,
     "**/.DS_Store": true
   },
-  "hidefiles.selectedProfile": "Show All Files"
+  "hidefiles.selectedProfile": "Show All Files",
+  "liveServer.settings.port": 9001
 }
