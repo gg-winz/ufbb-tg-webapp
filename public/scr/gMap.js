@@ -1,5 +1,5 @@
-// globalMaps.js
-export const globalMaps = [];
+const globalMaps = [];
+
 for (let i = 1; i <= 100; i++) {
   const row = [];
   for (let j = 1; j <= 1000; j++) {
@@ -7,6 +7,8 @@ for (let i = 1; i <= 100; i++) {
   }
   globalMaps.push(row);
 }
+
+export { globalMaps };
 
 // Пример использования
 //console.log(globalMaps[0][0]); // Y00001-X00001
