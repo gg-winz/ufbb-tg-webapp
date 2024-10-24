@@ -18,6 +18,88 @@ const ew = "Восточная стена";
 const ww = "Западная стена";
 
 const locations = {
+  "X49994-Y49999": {
+    title: locTitle,
+    description: "Северные Врата",
+    specialTeg: "north-gate",
+    backgroundImage: "",
+  },
+
+  "X49996-Y49996": {
+    title: locTitle,
+    description: "",
+    specialTeg: "assassin-guild",
+    backgroundImage: "",
+  },
+
+  "X49996-Y49998": {
+    title: locTitle,
+    description: "",
+    specialTeg: "herbalist",
+    backgroundImage: "",
+  },
+
+  "X49996-Y50002": {
+    title: locTitle,
+    description: "",
+    specialTeg: "berserker-guild",
+    backgroundImage: "",
+  },
+
+  "X49998-Y50000": {
+    title: locTitle,
+    description: "",
+    specialTeg: "shop",
+    backgroundImage: "",
+  },
+
+  "X49999-Y49994": {
+    title: locTitle,
+    description: "Западные Врата",
+    specialTeg: "west-gate",
+    backgroundImage: "",
+  },
+
+  "X49999-Y49999": {
+    title: locTitle,
+    description: "Звёздный храм",
+    specialTeg: "star",
+    backgroundImage: "",
+  },
+  "X49999-Y50004": {
+    title: locTitle,
+    description: "Восточные Врата",
+    specialTeg: "east-gate",
+    backgroundImage: "",
+  },
+  "X50002-Y49996": {
+    title: locTitle,
+    description: "",
+    specialTeg: "barbarian-guild",
+    backgroundImage: "",
+  },
+
+  "X50002-Y50000": {
+    title: locTitle,
+    description: "Колизей",
+    specialTeg: "coliseum",
+    backgroundImage: "",
+  },
+
+  "X50004-Y49999": {
+    title: locTitle,
+    description: "Южные Врата",
+    specialTeg: "south-gate",
+    backgroundImage: "",
+  },
+
+  "X50002-Y49997": {
+    title: locTitle,
+    description: "",
+    specialTeg: "BU",
+    backgroundImage: "",
+  },
+
   "X49994-Y49994": {
     title: locTitle,
     description: "",
@@ -50,13 +132,6 @@ const locations = {
     title: locTitle,
     description: "",
     specialTeg: "BU",
-    backgroundImage: "",
-  },
-
-  "X49994-Y49999": {
-    title: locTitle,
-    description: "Северные Врата",
-    specialTeg: "north-gate",
     backgroundImage: "",
   },
 
@@ -186,24 +261,10 @@ const locations = {
     backgroundImage: "",
   },
 
-  "X49996-Y49996": {
-    title: locTitle,
-    description: "",
-    specialTeg: "assassin-guild",
-    backgroundImage: "",
-  },
-
   "X49996-Y49997": {
     title: locTitle,
     description: "",
     specialTeg: "BU",
-    backgroundImage: "",
-  },
-
-  "X49996-Y49998": {
-    title: locTitle,
-    description: "",
-    specialTeg: "herbalist",
     backgroundImage: "",
   },
 
@@ -225,13 +286,6 @@ const locations = {
     title: locTitle,
     description: "",
     specialTeg: "BU",
-    backgroundImage: "",
-  },
-
-  "X49996-Y50002": {
-    title: locTitle,
-    description: "",
-    specialTeg: "berserker-guild",
     backgroundImage: "",
   },
 
@@ -368,13 +422,6 @@ const locations = {
     backgroundImage: "",
   },
 
-  "X49998-Y50000": {
-    title: locTitle,
-    description: "",
-    specialTeg: "shop",
-    backgroundImage: "",
-  },
-
   "X49998-Y50001": {
     title: locTitle,
     description: "",
@@ -400,13 +447,6 @@ const locations = {
     title: locTitle,
     description: "",
     specialTeg: "BU",
-    backgroundImage: "",
-  },
-
-  "X49999-Y49994": {
-    title: locTitle,
-    description: "Западные Врата",
-    specialTeg: "west-gate",
     backgroundImage: "",
   },
 
@@ -438,13 +478,6 @@ const locations = {
     backgroundImage: "",
   },
 
-  "X49999-Y49999": {
-    title: locTitle,
-    description: "Звёздный храм",
-    specialTeg: "star",
-    backgroundImage: "",
-  },
-
   "X49999-Y50000": {
     title: locTitle,
     description: "Площадь Духовности",
@@ -470,13 +503,6 @@ const locations = {
     title: locTitle,
     description: "Восточный Бульвар",
     specialTeg: "",
-    backgroundImage: "",
-  },
-
-  "X49999-Y50004": {
-    title: locTitle,
-    description: "Восточные Врата",
-    specialTeg: "east-gate",
     backgroundImage: "",
   },
 
@@ -648,20 +674,6 @@ const locations = {
     backgroundImage: "",
   },
 
-  "X50002-Y49996": {
-    title: locTitle,
-    description: "",
-    specialTeg: "barbarian-guild",
-    backgroundImage: "",
-  },
-
-  "X50002-Y49997": {
-    title: locTitle,
-    description: "",
-    specialTeg: "BU",
-    backgroundImage: "",
-  },
-
   "X50002-Y49998": {
     title: locTitle,
     description: "",
@@ -673,13 +685,6 @@ const locations = {
     title: locTitle,
     description: "Дорога к Южным Воротам",
     specialTeg: "",
-    backgroundImage: "",
-  },
-
-  "X50002-Y50000": {
-    title: locTitle,
-    description: "Колизей",
-    specialTeg: "coliseum",
     backgroundImage: "",
   },
 
@@ -820,13 +825,6 @@ const locations = {
     title: locTitle,
     description: "",
     specialTeg: "BU",
-    backgroundImage: "",
-  },
-
-  "X50004-Y49999": {
-    title: locTitle,
-    description: "Южные Врата",
-    specialTeg: "south-gate",
     backgroundImage: "",
   },
 
